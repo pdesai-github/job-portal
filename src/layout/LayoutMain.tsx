@@ -1,26 +1,31 @@
-import NavBar from "../nav/NavMenu";
+import React from "react";
 
-const LayoutMain: React.FC = () => {
+interface LayoutMainProps {
+    left: React.ElementType;
+    center: React.ElementType;
+    right: React.ElementType;
+}
+
+const LayoutMain: React.FC<LayoutMainProps> = ({ left, center, right }) => {
+
+    const Left = left;
+    const Center = center;
+    const Right = right;
 
     return (
         <div>
+
             <div className="container">
-                <div className="row">
-                  
-                    <div className="col-12">
-                        <NavBar></NavBar>
-                    </div>
-                  
-                </div>
+
                 <div className="row">
                     <div className="col-3">
-                        <h1>First col</h1>
+                        <Left></Left>
                     </div>
                     <div className="col-6">
-                        <h1>Sec col</h1>
+                        <Center></Center>
                     </div>
                     <div className="col-3">
-                        <h1>Third col</h1>
+                        <Right></Right>
                     </div>
                 </div>
             </div>
