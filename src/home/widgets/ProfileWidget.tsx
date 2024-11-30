@@ -8,14 +8,14 @@ const ProfileWidget: React.FC = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch("http://localhost:8080/users");
+            const response = await fetch("http://localhost:8080/api/users");
             const data = await response.json();
             console.log("fetchData : ", data);
             setUsers(data)
         }
 
         fetchData();
-    });
+    },[]);
 
     return (
         <div>
