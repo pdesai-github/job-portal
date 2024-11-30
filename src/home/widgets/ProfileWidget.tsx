@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import ImageComponent from "../ImageTest";
 import { User } from "../models/user.model";
+import { env } from "process";
 
 const ProfileWidget: React.FC = () => {
 
     const [users, setUsers] = useState<User[]>();
+    const userUrl = process.env.REACT_APP_USER_API_URL;
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch("http://localhost:8080/api/users");
+            const response = await fetch(userUrl!);
             const data = await response.json();
             console.log("fetchData : ", data);
             setUsers(data)

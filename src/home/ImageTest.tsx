@@ -8,7 +8,7 @@ interface ImageComponentProps {
 
 const ImageComponent: React.FC<ImageComponentProps> = ({ imageName, height, width }) => {
     const [imageUrl, setImageUrl] = useState('');
-
+    const imageApiUrl = process.env.REACT_APP_IMAGE_API_URL;
     const imageStyle = {
         width: `${width}px`, // Set width dynamically
         height: `${height}px`,
@@ -16,7 +16,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({ imageName, height, widt
 
     useEffect(() => {
         // Replace with your actual API endpoint
-        fetch(`http://localhost:8080/api/images/${imageName}`)
+        fetch(`${imageApiUrl+imageName}`)
             .then((response) => response.blob())  // Treat the response as a Blob
             .then((imageBlob) => {
                 const imageObjectUrl = URL.createObjectURL(imageBlob); // Convert the Blob into an object URL
