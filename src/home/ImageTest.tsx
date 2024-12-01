@@ -30,7 +30,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({ imageName, height, widt
     return (
         <div>
             {imageUrl ? (
-                <img style={imageStyle} src={imageUrl} alt="Fetched from API" />
+                <img className='rounded-circle' style={imageStyle} src={imageUrl} alt="Fetched from API" />
             ) : (
                 <p>Loading image...</p>
             )}
