@@ -8,7 +8,7 @@ interface ImageComponentProps {
 
 const ImageComponent: React.FC<ImageComponentProps> = ({ imageName, height, width }) => {
     const [imageUrl, setImageUrl] = useState('');
-    const imageApiUrl = process.env.REACT_APP_IMAGE_API_URL;
+    const imageApiUrl = "http://48.214.185.157/api/images/"
     const imageStyle = {
         width: `${width}px`, // Set width dynamically
         height: `${height}px`,

@@ -5,7 +5,7 @@ import FeedCard from "./FeedCard";
 const Feeds: React.FC = () => {
 
     const [feeds, setFeeds] = useState<Feed[]>();
-    const feedsUrl = process.env.REACT_APP_FEEDS_API_URL;
+    const feedsUrl = "http://52.238.241.69/api/feeds"
 
     useEffect(() => {
         const fetchFeeds = async () => {

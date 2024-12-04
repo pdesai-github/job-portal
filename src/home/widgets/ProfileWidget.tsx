@@ -6,7 +6,7 @@ import { env } from "process";
 const ProfileWidget: React.FC = () => {
 
     const [users, setUsers] = useState<User[]>();
-    const userUrl = process.env.REACT_APP_USER_API_URL;
+    const userUrl = "http://48.214.185.157/api/users"
 
     useEffect(() => {
         const fetchData = async () => {

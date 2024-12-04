@@ -15,13 +15,6 @@ spec:
     spec:
       containers:
         - name: job-portal-ui-container
-          image: pdesaidocker/job-portal-ui:v2
+          image: pdesaidocker/job-portal-ui:v6
           ports:
             - containerPort: 80 #port defined in image dockerfile
-          env:
-            - name: REACT_APP_USER_API_URL
-              value: http://48.214.185.157/api/users
-            - name: REACT_APP_IMAGE_API_URL
-              value: http://48.214.185.157/api/images/
-            - name: REACT_APP_FEEDS_API_URL
-              value: http://4.249.170.73/api/feeds
