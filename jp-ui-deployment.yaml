@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: job-portal-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: job-portal-ui #This should be same label
+  template:
+    metadata:
+      labels:
+        app: job-portal-ui #This should be same label
+    spec:
+      containers:
+        - name: job-portal-ui-container
+          image: pdesaidocker/job-portal-ui:v2
+          ports:
+            - containerPort: 80 #port defined in image dockerfile
+          env:
+            - name: REACT_APP_USER_API_URL
+              value: http://192.168.49.2:30001/api/users
+            - name: REACT_APP_IMAGE_API_URL
+              value: http://192.168.49.2:30001/api/images/
+            - name: REACT_APP_FEEDS_API_URL
+              value: http://192.168.49.2:30002/api/feeds
