@@ -20,8 +20,8 @@ spec:
             - containerPort: 80 #port defined in image dockerfile
           env:
             - name: REACT_APP_USER_API_URL
-              value: http://192.168.49.2:30001/api/users
+              value: http://48.214.185.157/api/users
             - name: REACT_APP_IMAGE_API_URL
-              value: http://192.168.49.2:30001/api/images/
+              value: http://48.214.185.157/api/images/
             - name: REACT_APP_FEEDS_API_URL
-              value: http://192.168.49.2:30002/api/feeds
+              value: http://4.249.170.73/api/feeds
